@@ -2,7 +2,7 @@ import os
 from pathlib import Path
 
 from dotenv import load_dotenv
-from google import genai
+import google.generativeai as genai
 
 
 env_path = (
@@ -12,39 +12,32 @@ env_path = (
     / ".env"
 )
 
-load_dotenv(
-    env_path
-)
+load_dotenv(env_path)
 
 api_key = os.getenv(
     "GEMINI_API_KEY"
 )
 
 if not api_key:
-
     raise ValueError(
-        "GEMINI_API_KEY "
-        "not found"
+        "GEMINI_API_KEY not found"
     )
 
-client = genai.Client(
+genai.configure(
     api_key=api_key
 )
 
+model = genai.GenerativeModel(
+    "gemini-1.5-flash"
+)
 
-def generate_response(
-    prompt
-):
+
+def generate_response(prompt):
 
     try:
 
         response = (
-            client.models
-            .generate_content(
-                model=
-                "gemini-2.5-flash",
-
-                contents=
+            model.generate_content(
                 prompt
             )
         )
