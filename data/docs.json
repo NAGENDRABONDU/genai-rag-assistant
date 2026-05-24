@@ -1,0 +1,42 @@
+[
+    {
+        "title": "Reset Password",
+        "content": "Users can reset their password from Settings > Security. A password reset email will be sent to the registered email address."
+    },
+    {
+        "title": "Delete Account",
+        "content": "Users can permanently delete their account from Account Settings > Privacy. Deleted accounts cannot be recovered."
+    },
+    {
+        "title": "Update Profile",
+        "content": "Users can update profile information such as name, phone number, and profile picture from Profile Settings."
+    },
+    {
+        "title": "Subscription Plans",
+        "content": "Premium subscription plans can be managed from Billing Settings. Users can upgrade, downgrade, or cancel subscriptions."
+    },
+    {
+        "title": "Contact Support",
+        "content": "Users can contact support through support@example.com or by using the Help Center contact form."
+    },
+    {
+        "title": "Refund Policy",
+        "content": "Refund requests must be submitted within 7 days of purchase. Approved refunds are processed within 5 business days."
+    },
+    {
+        "title": "Two Factor Authentication",
+        "content": "Users can enable two-factor authentication from Security Settings for additional account protection."
+    },
+    {
+        "title": "Change Email Address",
+        "content": "Users can change their registered email address from Account Settings after verifying their identity."
+    },
+    {
+        "title": "Download Reports",
+        "content": "Monthly and yearly reports can be downloaded in PDF or CSV format from the Reports Dashboard."
+    },
+    {
+        "title": "Notification Preferences",
+        "content": "Users can manage email and push notification preferences from Notification Settings."
+    }
+]
