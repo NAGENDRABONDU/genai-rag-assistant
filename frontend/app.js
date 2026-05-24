@@ -58,7 +58,7 @@ async function sendMessage() {
     try {
 
         const response = await fetch(
-            "http://127.0.0.1:8000/api/chat",
+            "https://genai-rag-assistant-production-bd3c.up.railway.app/api/chat",
             {
                 method: "POST",
                 headers: {

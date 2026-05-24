@@ -1,5 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 
 from app.routes.chat import router
 from app.services.index_service import build_index
@@ -18,6 +20,18 @@ app.add_middleware(
 
 app.include_router(router)
 
+# Serve CSS and JS
+app.mount(
+    "/static",
+    StaticFiles(directory="frontend"),
+    name="static"
+)
+
+@app.get("/")
+def home():
+    return FileResponse(
+        "frontend/index.html"
+    )
 
 @app.on_event("startup")
 async def startup_event():
