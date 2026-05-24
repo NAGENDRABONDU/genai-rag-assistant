@@ -19,7 +19,7 @@ from app.services.session_service import (
 
 router = APIRouter()
 
-vector_store = build_index()
+vector_store = None
 
 
 @router.get("/health")

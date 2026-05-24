@@ -1,17 +1,28 @@
-from sentence_transformers import (
-    SentenceTransformer
-)
+from sklearn.feature_extraction.text import TfidfVectorizer
 
-model = SentenceTransformer(
-    "all-MiniLM-L6-v2"
-)
+vectorizer = TfidfVectorizer()
+
+documents = []
 
 
-def create_embedding(text: str):
+def fit_embeddings(texts):
+    global vectorizer
+    global documents
 
-    return model.encode(text)
+    documents = texts
+
+    vectorizer.fit(texts)
+
+
+def create_embedding(text):
+
+    return vectorizer.transform(
+        [text]
+    ).toarray()[0]
 
 
 def create_embeddings(texts):
 
-    return model.encode(texts)
+    return vectorizer.transform(
+        texts
+    ).toarray()
